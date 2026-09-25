@@ -3,6 +3,7 @@ package app.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
@@ -23,7 +24,12 @@ public class Find {
     // SÅ! Id-feltet er nødt til at kunne være null, for at det kan få tildelt den rigtige værdi,
     // når objektet gemmes i databasen.
 
+    @Setter
     private LocalDate date;
+
+    @Setter
     private String photoURL;
+
+    @Setter
     private String note;
 }
