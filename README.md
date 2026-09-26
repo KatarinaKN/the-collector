@@ -1,7 +1,7 @@
 # The Collector
 
 *A web application for rock collectors to register their finds — including find spots, photos and notes — built as a 
-third-semester portfolio project.*
+third-semester portfolio project for my AP degree in Computer Science.*
 
 ### The idea
 I love hunting for hagstones — and I love actually finding one even more!
