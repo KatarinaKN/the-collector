@@ -7,6 +7,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "finds")
@@ -32,4 +34,14 @@ public class Find {
 
     @Setter
     private String note;
+
+    @Setter
+    @ManyToOne
+    private User user;
+
+    @ManyToMany
+    private Set<Category> categories = new HashSet<>();
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private FindSpot findSpot;
 }

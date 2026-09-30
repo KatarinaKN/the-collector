@@ -7,6 +7,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -33,6 +35,16 @@ public class User {
 
     @Setter
     private LocalDate createdOn;
+
+    @OneToMany(mappedBy = "users", cascade = CascadeType.REMOVE)
+    private Set<Find> finds = new HashSet<>();
+
+    public void addFind(Find find) {
+        this.finds.add(find);
+        if (find != null) {
+            find.setUser(this);
+        }
+    }
 }
 
 

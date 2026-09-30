@@ -41,6 +41,7 @@ public class FindDAO implements IDAO<Find, Long> {
     public Find getById(Long id) {
         EntityManager em = emf.createEntityManager();
 
+        //TODO skal nok ikke begynde transaktion.
         em.getTransaction().begin();
         Find find = em.find(Find.class, id);
         em.close();
